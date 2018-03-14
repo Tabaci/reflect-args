@@ -51,6 +51,22 @@ describe('Getting arguments from outside functions', function () {
 				bar: undefined
 			})
 		})
+		
+		it('should work with doc comments', function () {
+			/**
+			 * I am a documentation comment. Why on Earth I would appear with 
+			 * the function itself, I have( no clue. )
+			 */
+			function test (foo, bar)
+			{
+				
+			}
+			
+			expect(getArgs(test)).to.deep.equal({
+				foo: undefined, 
+				bar: undefined
+			})
+		})
 	})
 	
 	describe('#extractArgs (function)', function () {
