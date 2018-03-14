@@ -50,7 +50,7 @@ let Class = class Test
 }
 let inst = new Class()
 
-console.log(getArgs(isnt.func))
+console.log(getArgs(inst.func))
 
 /* Expected output:
  * {
