@@ -29,7 +29,7 @@ console.log(getArgs(func))
 
 /* Expected output:
  * {
- * 	   foo: undefined, 
+ *     foo: undefined, 
  *     bar: 12, 
  *     test: '12',
  *     cb: [Function: cb]
