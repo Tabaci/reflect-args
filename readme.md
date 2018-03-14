@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Tabaci/reflect-args.svg?branch=master)](https://travis-ci.org/Tabaci/reflect-args)
+
 # reflect-args
 
 This *npm* module defines a means of retrieving parameters from a function from 
