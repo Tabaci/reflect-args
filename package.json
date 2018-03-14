@@ -1,6 +1,6 @@
 {
   "name": "reflect-args",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lets you retrieve argument names, including default values from outside a function.",
   "main": "lib/index.js",
   "scripts": {
