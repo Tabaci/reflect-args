@@ -1,6 +1,6 @@
 <p align="left">
 <a href="https://travis-ci.org/Tabaci/reflect-args"><img src="https://travis-ci.org/Tabaci/reflect-args.svg?branch=master"></a>
-<a href="https://codecov.io/gh/Tabaci/http-cookie"><img src="https://codecov.io/gh/Tabaci/http-cookie/branch/master/graph/badge.svg" /></a>
+<a href="https://codecov.io/gh/Tabaci/reflect-args"><img src="https://codecov.io/gh/Tabaci/reflect-args/branch/master/graph/badge.svg" /></a>
 </p>
 
 # reflect-args
