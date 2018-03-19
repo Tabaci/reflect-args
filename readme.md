@@ -1,4 +1,7 @@
-[![Build Status](https://travis-ci.org/Tabaci/reflect-args.svg?branch=master)](https://travis-ci.org/Tabaci/reflect-args)
+<p align="left">
+<a href="https://travis-ci.org/Tabaci/reflect-args"><img src="https://travis-ci.org/Tabaci/reflect-args.svg?branch=master"></a>
+<a href="https://codecov.io/gh/Tabaci/http-cookie"><img src="https://codecov.io/gh/Tabaci/http-cookie/branch/master/graph/badge.svg" /></a>
+</p>
 
 # reflect-args
 
@@ -20,6 +23,9 @@ Before using it, we need to define it:
 const getArgs = require('reflect-args').getArgs
 ```
 
+The `getArgs` function takes in a `function` and returns a `Map` containing all 
+the parameters of that `function`.
+
 ### Function or Closure
 
 ```javascript
@@ -30,11 +36,11 @@ let func = function (foo, bar = 12, test = '12', cb = () => {}) {
 console.log(getArgs(func))
 
 /* Expected output:
- * {
- *     foo: undefined, 
- *     bar: 12, 
- *     test: '12',
- *     cb: [Function: cb]
+ * Map {
+ *     'foo' => undefined, 
+ *     'bar' => 12, 
+ *     'test' => '12',
+ *     'cb' => [Function: cb]
  * }
  */
 ```
@@ -55,9 +61,32 @@ let inst = new Class()
 console.log(getArgs(inst.func))
 
 /* Expected output:
- * {
- *     foo: undefined, 
- *     bar: undefined	
+ * Map {
+ *     'foo' => undefined, 
+ *     'bar' => undefined	
+ * }
+ */
+```
+
+### Pattern Matched Parameters
+
+Sometimes you may want to let the end user (programmer) use pattern matching 
+inside their function whose arguments are reflected. During such cases, the 
+`getArgs` function will give the keys the names of an incrementing range:
+
+```javascript
+let patternMatched = function ({foo, bar}, test, [more, and])
+{
+	
+}
+
+console.log(getArgs(patternMatched))
+
+/* Expected output:
+ * Map {
+ *     '__0' => '{foo, bar}', 
+ *     'test' => undefined, 
+ *     '__1' => '[more, and]'
  * }
  */
 ```
